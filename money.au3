@@ -7,7 +7,7 @@ $active = WinActivate($title)
 If $active Then
    $POS = WinGetPos($title)
    While True
-	  IsClose($POS)
+	  Close($POS)
 	  ClickMoney($POS)
    WEnd
 Else
@@ -16,7 +16,7 @@ Else
 EndIf
 
 
-Func IsClose($POS)
+Func Close($POS)
    $cross = PixelSearch($POS[0], $POS[1], $POS[2], $POS[3], 0xD24E40)
    If Not @error Then
 	  MouseClick( "left", $cross[0], $cross[1],1,0)
